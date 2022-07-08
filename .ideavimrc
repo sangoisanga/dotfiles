@@ -25,13 +25,10 @@ let g:argtextobj_pairs="[:],(:),<:>,::,"
 set NERDTree
 let g:NERDTreeMapActivateNode='l'
 let g:NERDTreeMapJumpParent='h'
-nnoremap gp :NERDTree <CR>
 
-nmap gi <Action>(GotoImplementation)
-nmap gt <Action>(GotoTypeDeclaration)
-nmap gh <Action>(CallHierarchy)
-nmap ge <Action>(GotoNextError)
-nmap gw <Action>(CloseContent)
+nmap mi <Action>(GotoImplementation)
+nmap mt <Action>(GotoTypeDeclaration)
+nmap mh <Action>(CallHierarchy)
 
 map [[ <Action>(MethodUp)
 map ]] <Action>(MethodDown)
@@ -42,9 +39,6 @@ map b [b
 
 map H ^
 map L $
-
-" not yank when override by paste
-"vnoremap p "_dP
 
 map <leader>r <Action>(RenameElement)
 map <leader>o <Action>(FileStructurePopup)
@@ -68,7 +62,7 @@ nnoremap ,k :action Stop<CR>
 map <TAB> <Action>(PreviousTab)
 map <s-TAB> <Action>(NextTab)
 map <s-Space> <Action>(GotoNextError)
-nnoremap mv :action NextSplitter <CR>
+map <c-TAB> <Action>(NextSplitter)
 
 map <c-\> <Action>(SplitVertically)
 map <c--> <Action>(SplitHorizontally)

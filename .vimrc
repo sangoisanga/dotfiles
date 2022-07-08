@@ -1,5 +1,8 @@
+":PlugInstall
+":PlugStatus
+
 call plug#begin(has('nvim') ? stdpath('data') . '/plugged' : '~/.vim/plugged')
-"Plug 'chaoren/vim-wordmotion'
+Plug 'chaoren/vim-wordmotion'
 call plug#end()
 let mapleader=" "
 
@@ -11,8 +14,5 @@ set visualbell
 set smartcase
 set showmode
 set clipboard=unnamed
+
 inoremap jk <Esc>
-
-
-nmap cw ce
-nmap cW cE
