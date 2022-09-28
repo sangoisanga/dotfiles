@@ -1,0 +1,99 @@
+source ~/.vimrc
+
+set ideastrictmode
+
+set clipboard+=ideaput
+set ideamarks
+set easymotion
+set ideajoin
+set idearefactormode=keep
+set surround
+set multiple-cursors
+set ReplaceWithRegister
+set exchange
+
+set highlightedyank
+let g:highlightedyank_highlight_duration = "1000"
+
+set argtextobj
+let g:argtextobj_pairs="[:],(:),<:>,{:},::,"
+
+set keep-english-in-normal
+set keep-english-in-normal-restore-in-insert
+
+set lookupkeys+=<C-K>
+
+"Press o to open the file in a new buffer or open/close directory.
+"Press t to open the file in a new tab.
+"Press i to open the file in a new horizontal split.
+"Press s to open the file in a new vertical split.
+"Press p to go to parent directory.
+"Press r to refresh the current directory.
+"Press m to launch NERDTree menu inside Vim.
+set NERDTree
+let g:NERDTreeMapActivateNode='l'
+let g:NERDTreeMapJumpParent='h'
+
+nmap gi <Action>(GotoImplementation)
+nmap gt <Action>(GotoTypeDeclaration)
+nmap gs <Action>(GotoSuperMethod)
+nmap gh <Action>(CallHierarchy)
+
+map [[ <Action>(MethodUp)
+map ]] <Action>(MethodDown)
+nmap ]c :action VcsShowNextChangeMarker<CR>
+nmap [c :action VcsShowPrevChangeMarker<CR>
+
+map w [w
+map e ]w
+map b [b
+
+map <leader>r <Action>(RenameElement)
+map <leader>o <Action>(FileStructurePopup)
+map <leader>e <Action>(SelectInProjectView)
+map <leader>z <Action>(ToggleDistractionFreeMode)
+map <leader>d <Action>(QuickJavaDoc)
+map <leader>m <Action>(ExtractMethod)
+
+map <leader>gu <Action>(Vcs.UpdateProject)
+map <leader>gh <Action>(Vcs.ShowHistoryForBlock)
+map <leader>gb <Action>(Git.Branches)
+map <leader>ga <Action>(Annotate)
+map <leader>gl <Action>(Vcs.Show.Log)
+
+
+"nnoremap ,t :action ActivateDebugToolWindow<CR>
+nnoremap ,d :action ChooseDebugConfiguration<CR>
+nnoremap ,f :action ChooseRunConfiguration<CR>
+nnoremap ,r :action Rerun<CR>
+nnoremap ,p :action RunClass<CR>
+nnoremap ,b :action ToggleLineBreakpoint<CR>
+nnoremap ,k :action Stop<CR>
+
+" moving
+" map <TAB> <Action>(PreviousTab)
+" map <s-TAB> <Action>(NextTab)
+map <s-Space> <Action>(GotoNextError)
+
+map <c-\> <Action>(MoveTabRight)
+map <c--> <Action>(SplitHorizontally)
+map <c-=> <Action>(UnsplitAll)
+
+nnoremap <c-x> :action HideAllWindows<CR>
+map <c-w>m <Action>(MaximizeEditorInSplit)
+
+map <c-o> <Action>(Back)
+map <c-i> <Action>(Forward)
+map <c-p> :action GotoFile<CR>
+
+map mc <Action>(CollapseRegion)
+map mo <Action>(ExpandRegion)
+map <c-m>c <Action>(CollapseAllRegions)
+map <c-m>o <Action>(ExpandAllRegions)
+
+map f <Plug>(easymotion-s)
+map F <Action>(AceDeclarationAction)
+
+nnoremap == :action ReformatCode <CR>
+
+nnoremap <Esc> <Esc>:noh<CR>
