@@ -12,6 +12,9 @@ set multiple-cursors
 set ReplaceWithRegister
 set exchange
 
+set sneak
+set quickscope
+
 set highlightedyank
 let g:highlightedyank_highlight_duration = "1000"
 
@@ -21,15 +24,10 @@ let g:argtextobj_pairs="[:],(:),<:>,{:},::,"
 set keep-english-in-normal
 set keep-english-in-normal-restore-in-insert
 
-set lookupkeys+=<C-K>
+let g:qs_primary_color = '#d44e22'
+let g:qs_secondary_color = '#0ba2e3'
 
-"Press o to open the file in a new buffer or open/close directory.
-"Press t to open the file in a new tab.
-"Press i to open the file in a new horizontal split.
-"Press s to open the file in a new vertical split.
-"Press p to go to parent directory.
-"Press r to refresh the current directory.
-"Press m to launch NERDTree menu inside Vim.
+
 set NERDTree
 let g:NERDTreeMapActivateNode='l'
 let g:NERDTreeMapJumpParent='h'
@@ -41,8 +39,8 @@ nmap gh <Action>(CallHierarchy)
 
 map [[ <Action>(MethodUp)
 map ]] <Action>(MethodDown)
-nmap ]c :action VcsShowNextChangeMarker<CR>
-nmap [c :action VcsShowPrevChangeMarker<CR>
+nmap ]c <Action>(VcsShowNextChangeMarker)
+nmap [c <Action>(VcsShowPrevChangeMarker)
 
 map w [w
 map e ]w
@@ -61,39 +59,37 @@ map <leader>gb <Action>(Git.Branches)
 map <leader>ga <Action>(Annotate)
 map <leader>gl <Action>(Vcs.Show.Log)
 
+map > <Action>(EditorIndentSelection)
+map < <Action>(EditorUnindentSelection)
 
-"nnoremap ,t :action ActivateDebugToolWindow<CR>
-nnoremap ,d :action ChooseDebugConfiguration<CR>
-nnoremap ,f :action ChooseRunConfiguration<CR>
-nnoremap ,r :action Rerun<CR>
-nnoremap ,p :action RunClass<CR>
-nnoremap ,b :action ToggleLineBreakpoint<CR>
-nnoremap ,k :action Stop<CR>
+"nnoremap ,t <Action>(ActivateDebugToolWindow)
+nmap ,d <Action>(ChooseDebugConfiguration)
+nmap ,f <Action>(ChooseRunConfiguration)
+nmap ,r <Action>(Rerun)
+nmap ,p <Action>(RunClass)
+nmap ,b <Action>(ToggleLineBreakpoint)
+nmap ,s <Action>(Stop)
 
 " moving
-" map <TAB> <Action>(PreviousTab)
-" map <s-TAB> <Action>(NextTab)
+map <TAB> <Action>(PreviousTab)
+map <s-TAB> <Action>(NextTab)
 map <s-Space> <Action>(GotoNextError)
 
 map <c-\> <Action>(MoveTabRight)
+map <c-]> <Action>(MoveEditorToOppositeTabGroup)
 map <c--> <Action>(SplitHorizontally)
 map <c-=> <Action>(UnsplitAll)
 
-nnoremap <c-x> :action HideAllWindows<CR>
+nmap <c-x> <Action>(HideAllWindows)
 map <c-w>m <Action>(MaximizeEditorInSplit)
 
 map <c-o> <Action>(Back)
 map <c-i> <Action>(Forward)
-map <c-p> :action GotoFile<CR>
+nmap <c-p> <Action>(GotoFile)
 
-map mc <Action>(CollapseRegion)
-map mo <Action>(ExpandRegion)
-map <c-m>c <Action>(CollapseAllRegions)
-map <c-m>o <Action>(ExpandAllRegions)
+map <leader>f <Plug>(easymotion-s)
+map <leader>F <Action>(AceDeclarationAction)
 
-map f <Plug>(easymotion-s)
-map F <Action>(AceDeclarationAction)
-
-nnoremap == :action ReformatCode <CR>
+nmap == <Action>(ReformatCode)
 
 nnoremap <Esc> <Esc>:noh<CR>
