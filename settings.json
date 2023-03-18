@@ -1,0 +1,129 @@
+{
+  "vim.vimrc.enable": true,
+  "vim.easymotion": true,
+  "vim.useSystemClipboard": true,
+  "git.autofetch": true,
+  "vim.foldfix": true,
+  "vim.history": 200,
+  "vim.hlsearch": true,
+  "vim.highlightedyank.enable": true,
+  "vim.leader": "<space>",
+  "vim.handleKeys": {
+    "<C-a>": false,
+    "<C-f>": false,
+  },
+  "vim.highlightedyank.color": "rgba(250, 240, 170, 0.5)",
+  "vim.highlightedyank.duration": 200,
+  "vim.sneak": true,
+  "vim.sneakUseIgnorecaseAndSmartcase": true,
+  "vim.replaceWithRegister": true,
+  "vim.normalModeKeyBindings": [
+    {
+      "before": [
+        "ctrl+w",
+        "m"
+      ],
+      "commands": [
+        "workbench.action.toggleEditorWidths"
+      ]
+    },
+    {
+      "before": [
+        "<leader>",
+        "b",
+        "t"
+      ],
+      "commands": [
+        "bookmarks.toggle"
+      ]
+    },
+    {
+      "before": [
+        "<leader>",
+        "b",
+        "l"
+      ],
+      "commands": [
+        "bookmarks.listFromAllFiles",
+      ]
+    },
+    {
+      "before": [
+        "<leader>",
+        "b",
+        "c"
+      ],
+      "commands": [
+        "bookmarks.clearFromAllFiles"
+      ]
+    },
+    {
+      "before": [
+        "g",
+        "t"
+      ],
+      "commands": [
+        "editor.action.goToTypeDefinition"
+      ]
+    },
+    {
+      "before": [
+        "<leader>",
+        "t",
+        "n"
+      ],
+      "commands": [
+        "workbench.action.terminal.newInActiveWorkspace"
+      ]
+    },
+    {
+      "before": [
+        "<leader>",
+        "o",
+      ],
+      "commands": [
+        "workbench.files.action.showActiveFileInExplorer"
+      ]
+    }
+  ],
+  "vim.visualModeKeyBindings": [
+    {
+      "before": [
+        ">"
+      ],
+      "commands": [
+        "editor.action.indentLines"
+      ]
+    },
+    {
+      "before": [
+        "<"
+      ],
+      "commands": [
+        "editor.action.outdentLines"
+      ]
+    },
+  ],
+  "vim.commandLineModeKeyBindings": [],
+  "explorer.fileNesting.enabled": true,
+  "explorer.fileNesting.expand": false,
+  "explorer.fileNesting.patterns": {
+    "*.ts": "${capture}.js, ${capture}.*.ts, ${capture}.d.ts, ${capture}.ts.meta",
+    "*.js": "${capture}.js.*, ${capture}.*.js, ${capture}.d.ts",
+    "*.yml": "${capture}.*.yml, ${capture}.*.yaml",
+    "*.yaml": "${capture}.*.yml, ${capture}.*.yaml"
+  },
+  "editor.tabSize": 2,
+  "editor.detectIndentation": false,
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true,
+    "source.organizeImports": true,
+  },
+  "eslint.validate": [
+    "typescript"
+  ],
+  "terminal.integrated.cursorBlinking": true,
+  "zenMode.hideTabs": false,
+  "zenMode.hideLineNumbers": false,
+  "workbench.colorTheme": "WebStorm Darcula Darker Theme",
+}
