@@ -1,10 +1,12 @@
 [
   {
-    "key": "alt+l",
+    "key": "shift+k",
+    "when": "inputFocus && vim.mode == 'Normal'",
     "command": "workbench.action.nextEditor"
   },
   {
-    "key": "alt+h",
+    "key": "shift+j",
+    "when": "inputFocus && vim.mode == 'Normal'",
     "command": "workbench.action.previousEditor"
   },
   {
