@@ -22,11 +22,6 @@ set argtextobj
 let g:argtextobj_pairs="[:],(:),<:>,{:},::,"
 
 
-let g:qs_highlight_on_keys = ['f', 'F']
-let g:qs_primary_color = '#d44e22'
-let g:qs_secondary_color = '#0ba2e3'
-
-
 set NERDTree
 let g:NERDTreeMapActivateNode='l'
 let g:NERDTreeMapJumpParent='h'
@@ -62,7 +57,7 @@ map <leader>gb <Action>(Git.Branches)
 map <leader>ga <Action>(Annotate)
 map <leader>gl <Action>(Vcs.Show.Log)
 
-map <leader>pm <Action>(NativeTabbingMergeAllWindows)
+map <leader>pm <Action>(MergeAllWindowsAction)
 map <leader>pp <Action>(OpenProjectWindows)
 map <leader>pr <Action>($LRU)
 
