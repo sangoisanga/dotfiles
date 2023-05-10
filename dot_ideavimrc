@@ -21,9 +21,8 @@ let g:highlightedyank_highlight_duration = "1000"
 set argtextobj
 let g:argtextobj_pairs="[:],(:),<:>,{:},::,"
 
-set keep-english-in-normal
-set keep-english-in-normal-restore-in-insert
 
+let g:qs_highlight_on_keys = ['f', 'F']
 let g:qs_primary_color = '#d44e22'
 let g:qs_secondary_color = '#0ba2e3'
 
@@ -36,6 +35,9 @@ nmap gi <Action>(GotoImplementation)
 nmap gt <Action>(GotoTypeDeclaration)
 nmap gs <Action>(GotoSuperMethod)
 nmap gh <Action>(CallHierarchy)
+nmap ga <Action>(SearchEverywhere)
+nmap gy <Action>(GotoSymbol)
+nmap gf <Action>(GotoFile)
 
 map [[ <Action>(MethodUp)
 map ]] <Action>(MethodDown)
@@ -52,12 +54,17 @@ map <leader>e <Action>(SelectInProjectView)
 map <leader>z <Action>(ToggleDistractionFreeMode)
 map <leader>d <Action>(QuickJavaDoc)
 map <leader>m <Action>(ExtractMethod)
+map <leader>a <Action>(ShowIntentionActions)
 
 map <leader>gu <Action>(Vcs.UpdateProject)
 map <leader>gh <Action>(Vcs.ShowHistoryForBlock)
 map <leader>gb <Action>(Git.Branches)
 map <leader>ga <Action>(Annotate)
 map <leader>gl <Action>(Vcs.Show.Log)
+
+map <leader>pm <Action>(NativeTabbingMergeAllWindows)
+map <leader>pp <Action>(OpenProjectWindows)
+map <leader>pr <Action>($LRU)
 
 map > <Action>(EditorIndentSelection)
 map < <Action>(EditorUnindentSelection)
@@ -71,8 +78,8 @@ nmap ,b <Action>(ToggleLineBreakpoint)
 nmap ,s <Action>(Stop)
 
 " moving
-map <TAB> <Action>(PreviousTab)
-map <s-TAB> <Action>(NextTab)
+nmap <s-j> <Action>(PreviousTab)
+nmap <s-k> <Action>(NextTab)
 map <s-Space> <Action>(GotoNextError)
 
 map <c-\> <Action>(MoveTabRight)
@@ -85,10 +92,10 @@ map <c-w>m <Action>(MaximizeEditorInSplit)
 
 map <c-o> <Action>(Back)
 map <c-i> <Action>(Forward)
-nmap <c-p> <Action>(GotoFile)
+
 
 map <leader>f <Plug>(easymotion-s)
-map <leader>F <Action>(AceDeclarationAction)
+map <leader>i <Action>(AceDeclarationAction)
 
 nmap == <Action>(ReformatCode)
 
