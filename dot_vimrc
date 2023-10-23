@@ -37,6 +37,7 @@ set wildignore=*.docx,*.jpg,*.png,*.gif,*.pdf,*.pyc,*.exe,*.flv,*.img,*.xlsx
 map H ^
 map L $
 inoremap jk <Esc>
+inoremap kj <Esc>
 nnoremap Q @q
 
 nnoremap vv V
