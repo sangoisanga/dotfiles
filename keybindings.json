@@ -1,11 +1,11 @@
 [
   {
-    "key": "shift+k",
-    "when": "inputFocus && vim.mode == 'Normal'",
+    "key": "shift+j",
+    "when": "inputFocus && vim.mode == 'Normal' && !terminalFocus",
     "command": "workbench.action.nextEditor"
   },
   {
-    "key": "shift+j",
+    "key": "shift+k",
     "when": "inputFocus && vim.mode == 'Normal'",
     "command": "workbench.action.previousEditor"
   },
@@ -33,5 +33,9 @@
     "key": "tab",
     "command": "togglePeekWidgetFocus",
     "when": "inReferenceSearchEditor && vim.active && vim.mode != 'Insert' || referenceSearchVisible"
+  },
+  {
+    "key": "ctrl+w",
+    "command": "workbench.action.closeActiveEditor"
   },
 ]
