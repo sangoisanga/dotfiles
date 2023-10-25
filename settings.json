@@ -282,5 +282,17 @@
     "source.fixAll.eslint": true,
   },
   "editor.formatOnSaveMode": "modifications",
-  "sort-imports.on-save": false
+  "sort-imports.on-save": false,
+  "github.copilot.enable": {
+    "*": true,
+    "plaintext": false,
+    "markdown": false,
+    "scminput": false
+  },
+  "[jsonc]": {
+    "editor.defaultFormatter": "vscode.json-language-features"
+  },
+  "[json]": {
+    "editor.defaultFormatter": "vscode.json-language-features"
+  }
 }
