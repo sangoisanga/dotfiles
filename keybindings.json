@@ -30,12 +30,22 @@
     "when": "inQuickOpen"
   },
   {
+    "key": "ctrl+n",
+    "command": "goToNextReference",
+    "when": "inReferenceSearchEditor || referenceSearchVisible"
+  },
+  {
+    "key": "ctrl+p",
+    "command": "goToPreviousReference",
+    "when": "inReferenceSearchEditor || referenceSearchVisible"
+  },
+  {
     "key": "tab",
     "command": "togglePeekWidgetFocus",
     "when": "inReferenceSearchEditor && vim.active && vim.mode != 'Insert' || referenceSearchVisible"
   },
   {
-    "key": "ctrl+w",
+    "key": "alt+w",
     "command": "workbench.action.closeActiveEditor"
   },
 ]
