@@ -1,8 +1,8 @@
 source ~/.vimrc
 
 set ideastrictmode
-
 set clipboard+=ideaput
+
 set ideamarks
 set easymotion
 set ideajoin
@@ -56,6 +56,8 @@ map <leader>gh <Action>(Vcs.ShowHistoryForBlock)
 map <leader>gb <Action>(Git.Branches)
 map <leader>ga <Action>(Annotate)
 map <leader>gl <Action>(Vcs.Show.Log)
+map <leader>gn <Action>(GitNewBranchAction)
+map <leader>gk <Action>(CheckinProject)
 
 map <leader>pm <Action>(MergeAllWindowsAction)
 map <leader>pp <Action>(OpenProjectWindows)
@@ -87,7 +89,6 @@ map <c-w>m <Action>(MaximizeEditorInSplit)
 
 map <c-o> <Action>(Back)
 map <c-i> <Action>(Forward)
-
 
 map <leader>f <Plug>(easymotion-s)
 map <leader>i <Action>(AceDeclarationAction)
